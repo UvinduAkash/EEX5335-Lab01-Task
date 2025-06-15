@@ -1,4 +1,3 @@
-# EEX5335-Lab01-Task
 # 🔁 Process Creation in C using fork() – Fibonacci Sequence (via WSL2)
 
 This guide demonstrates how to set up a Linux development environment using WSL2 on Windows 11, write a C program that creates a child process using fork(), and generate a Fibonacci sequence from the child process. The parent process uses wait() to ensure synchronization.
@@ -79,9 +78,9 @@ This guide demonstrates how to set up a Linux development environment using WSL2
        if (argc != 2) {
            fprintf(stderr, "Usage: %s <non-negative number>\n", argv[0]);
            return 1;
-       }
+        }
 
-       int n = atoi(argv[1]);
+        int n = atoi(argv[1]);
        if (n < 0) {
            fprintf(stderr, "Error: Please enter a non-negative number.\n");
            return 1;
@@ -107,7 +106,7 @@ This guide demonstrates how to set up a Linux development environment using WSL2
    }
    
 
-3. Save and exit:
+4. Save and exit:
    - Press Ctrl+O → Enter → Ctrl+X
 
 ---
