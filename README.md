@@ -6,11 +6,11 @@ This guide demonstrates how to set up a Linux development environment using WSL2
 
 ## 🖥 System Setup
 
-- Operating System: Windows 11 Pro (64-bit)
-- Linux Distribution: Ubuntu 24.04 LTS (WSL2)
-- Terminal: Ubuntu Bash (WSL2 maroon shell)
-- Compiler: GCC (via build-essential)
-- Editor: nano / Visual Studio Code (v1.101)
+- *Operating System*: Windows 11 Pro (64-bit)
+- *Linux Distribution*: Ubuntu 24.04 LTS (WSL2)
+- *Terminal*: Ubuntu Bash (WSL2 maroon shell)
+- *Compiler*: GCC (via build-essential)
+- *Editor*: nano / Visual Studio Code (v1.101)
 
 ---
 
@@ -23,9 +23,9 @@ This guide demonstrates how to set up a Linux development environment using WSL2
    Click OK and Restart the computer.
 
 2. Open PowerShell as administrator and run:
-   bash
+   ```bash
    wsl --install
-   
+   ```
 
 3. When Ubuntu opens:
    - Enter a username
@@ -36,28 +36,28 @@ This guide demonstrates how to set up a Linux development environment using WSL2
 ## 🔧 Step 2: Prepare the Ubuntu Environment
 
 1. Update packages:
-   bash
+   ```bash
    sudo apt update && sudo apt upgrade
-   
+   ```
 
 2. Install essential developer tools:
-   bash
+   ```bash
    sudo apt install build-essential
-   
+   ```
 
 ---
 
 ## 🧾 Step 3: Write the C Program using fork()
 
 1. Create and open the C file:
-   bash
+   ```bash
    nano fibonacci_fork.c
-   
+   ```
 
 2. Use this C code:
-   bash
+   ```bash
    https://github.com/UvinduAkash/EEX5335-Lab01-Task/blob/main/fibonacci.c
-   
+   ```
    
 3. Save and exit:
    - Press Ctrl+O → Enter → Ctrl+X
@@ -67,9 +67,9 @@ This guide demonstrates how to set up a Linux development environment using WSL2
 ## 🛠 Step 4: Compile the Program
 
 In the terminal:
-bash
+```bash
 gcc fibonacci_fork.c -o fibonacci_fork
-
+```
 
 If there are no errors, an executable named fibonacci_fork will be created.
 
@@ -78,16 +78,16 @@ If there are no errors, an executable named fibonacci_fork will be created.
 ## ▶ Step 5: Run the Program
 
 Run the program by passing a number of terms:
-bash
+```bash
 ./fibonacci_fork 7
-
+```
 
 Output:
-bash
+```bash
 Child Process (PID: 2356) generating Fibonacci:
 0 1 1 2 3 5 8 
 Parent Process (PID: 2355) waited for child to complete.
-
+```
 
 ---
 
@@ -104,11 +104,11 @@ Parent Process (PID: 2355) waited for child to complete.
 
 ## 📂 Directory Structure
 
-
+```
 .
 ├── fibonacci_fork.c       # Source code
 └── README.md              # Instructions and environment setup
-
+```
 
 ---
 
@@ -116,9 +116,9 @@ Parent Process (PID: 2355) waited for child to complete.
 
 If you create files using WSL2, you can access them from Windows via:
 
-
+```
 \\wsl.localhost\Ubuntu\home\<your-username>\
-
+```
 
 Or use Visual Studio Code with the WSL extension to open your Ubuntu home directory directly.
 
@@ -141,4 +141,8 @@ P.L. Uvindu Perera
 Operating Systems Laboratory – The Open University of Sri Lanka  
 GitHub Repository: https://github.com/your-username/fibonacci-fork-lab
 
-> Replace your-username with your actual GitHub username.
+> Replace your-username with your actual GitHub username.
+
+
+
+
