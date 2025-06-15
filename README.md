@@ -6,11 +6,11 @@ This guide demonstrates how to set up a Linux development environment using WSL2
 
 ## 🖥 System Setup
 
-- *Operating System*: Windows 11 Pro (64-bit)
-- *Linux Distribution*: Ubuntu 24.04 LTS (WSL2)
-- *Terminal*: Ubuntu Bash (WSL2 maroon shell)
-- *Compiler*: GCC (via build-essential)
-- *Editor*: nano / Visual Studio Code (v1.101)
+- Operating System: Windows 11 Pro (64-bit)
+- Linux Distribution: Ubuntu 24.04 LTS (WSL2)
+- Terminal: Ubuntu Bash (WSL2 maroon shell)
+- Compiler: GCC (via build-essential)
+- Editor: nano / Visual Studio Code (v1.101)
 
 ---
 
@@ -78,9 +78,9 @@ This guide demonstrates how to set up a Linux development environment using WSL2
        if (argc != 2) {
            fprintf(stderr, "Usage: %s <non-negative number>\n", argv[0]);
            return 1;
-        }
+       }
 
-        int n = atoi(argv[1]);
+       int n = atoi(argv[1]);
        if (n < 0) {
            fprintf(stderr, "Error: Please enter a non-negative number.\n");
            return 1;
@@ -106,7 +106,7 @@ This guide demonstrates how to set up a Linux development environment using WSL2
    }
    
 
-4. Save and exit:
+3. Save and exit:
    - Press Ctrl+O → Enter → Ctrl+X
 
 ---
@@ -143,9 +143,9 @@ Parent Process (PID: 2355) waited for child to complete.
 | Problem                       | Cause                              | Solution                                  |
 |------------------------------|-------------------------------------|-------------------------------------------|
 | gcc: command not found       | GCC not installed                   | Run sudo apt install build-essential    |
-| -0: invalid option           | You typed -0 instead of -o      | Use -o fibonacci_fork                   |
-| ./fibonacci_fork: not found  | File not compiled or wrong name     | Ensure gcc compiled successfully          |
-| command not found: ./gcc     | Mistakenly typed ./gcc            | Just use gcc, not ./gcc               |
+| -0: invalid option           | You typed -0 instead of -o          | Use -o fibonacci_fork                    |
+| ./fibonacci_fork: not found  | File not compiled or wrong name     | Ensure gcc compiled successfully         |
+| command not found: ./gcc     | Mistakenly typed ./gcc              | Just use gcc, not ./gcc                  |
 
 ---
 
@@ -163,28 +163,6 @@ Parent Process (PID: 2355) waited for child to complete.
 
 If you create files using WSL2, you can access them from Windows via:
 
-\wsl.localhost\Ubuntu\home\<your-username>\
 
+\\wsl.localhost\Ubuntu\home\<your-username>\
 
-Or use Visual Studio Code with the WSL extension to open your Ubuntu home directory directly.
-
----
-
-## ✅ Summary
-
-This project helped demonstrate:
-
-- Using fork() to create child processes in C.
-- Synchronizing execution using wait().
-- Building and running C programs inside Ubuntu on Windows using WSL2.
-- Common compilation and execution errors in Linux development environments.
-
----
-
-## 👨‍💻 Author
-
-P.L. Uvindu Perera  
-Operating Systems Laboratory – The Open University of Sri Lanka  
-GitHub Repository: https://github.com/your-username/fibonacci-fork-lab
-
-> Replace your-username with your actual GitHub username.
