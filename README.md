@@ -54,58 +54,11 @@ This guide demonstrates how to set up a Linux development environment using WSL2
    nano fibonacci_fork.c
    
 
-2. Paste this C code:
-   c
-   #include <stdio.h>
-   #include <stdlib.h>
-   #include <unistd.h>
-   #include <sys/wait.h>
-
-   void generateFibonacci(int n) {
-       int first = 0, second = 1, next;
-       if (n >= 1) printf("%d ", first);
-       if (n >= 2) printf("%d ", second);
-       for (int i = 3; i <= n; i++) {
-           next = first + second;
-           printf("%d ", next);
-           first = second;
-           second = next;
-       }
-       printf("\n");
-   }
-
-   int main(int argc, char *argv[]) {
-       if (argc != 2) {
-           fprintf(stderr, "Usage: %s <non-negative number>\n", argv[0]);
-           return 1;
-       }
-
-       int n = atoi(argv[1]);
-       if (n < 0) {
-           fprintf(stderr, "Error: Please enter a non-negative number.\n");
-           return 1;
-       }
-
-       pid_t pid = fork();
-
-       if (pid < 0) {
-           perror("fork failed");
-           return 1;
-       }
-       else if (pid == 0) {
-           printf("Child Process (PID: %d) generating Fibonacci:\n", getpid());
-           generateFibonacci(n);
-           exit(0);
-       }
-       else {
-           wait(NULL);
-           printf("Parent Process (PID: %d) waited for child to complete.\n", getpid());
-       }
-
-       return 0;
-   }
+2. Use this C code:
+   bash
+   https://github.com/UvinduAkash/EEX5335-Lab01-Task/blob/main/fibonacci.c
    
-
+   
 3. Save and exit:
    - Press Ctrl+O → Enter → Ctrl+X
 
@@ -166,3 +119,26 @@ If you create files using WSL2, you can access them from Windows via:
 
 \\wsl.localhost\Ubuntu\home\<your-username>\
 
+
+Or use Visual Studio Code with the WSL extension to open your Ubuntu home directory directly.
+
+---
+
+## ✅ Summary
+
+This project helped demonstrate:
+
+- Using fork() to create child processes in C.
+- Synchronizing execution using wait().
+- Building and running C programs inside Ubuntu on Windows using WSL2.
+- Common compilation and execution errors in Linux development environments.
+
+---
+
+## 👨‍💻 Author
+
+P.L. Uvindu Perera  
+Operating Systems Laboratory – The Open University of Sri Lanka  
+GitHub Repository: https://github.com/your-username/fibonacci-fork-lab
+
+> Replace your-username with your actual GitHub username.
